@@ -18,3 +18,9 @@ var navList = [
     'toRoute': NavigationRoutes.profileRoute,
   },
 ];
+var moreList = [
+  {
+    'title': 'Terms and Conditions',
+    'toRoute': NavigationRoutes.termsconditions,
+  },
+];

@@ -42,11 +42,21 @@ class HomePage extends GetView<HomeController> {
             elevation: 0,
             currentIndex: controller.selectedIndex.value,
             onTap: (value) {
-              if (value < 4) {
+              if (value < 3) {
                 controller.selectedIndex.value = value;
                 controller.onPageChanged();
               } else {
-                //
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) => Wrap(
+                        children: moreList
+                            .map(
+                              (e) => ListTile(
+                                leading: e['icon'] as Widget,
+                                title: Text(e['title'] as String),
+                              ),
+                            )
+                            .toList()));
               }
             },
             type: BottomNavigationBarType.fixed,
