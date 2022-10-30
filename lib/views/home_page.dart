@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:thirumathikart_seller/config/themes.dart';
+import 'package:thirumathikart_seller/constants/nav_list.dart';
 import 'package:thirumathikart_seller/constants/navigation_routes.dart';
 import 'package:thirumathikart_seller/controllers/home_controller.dart';
 import 'package:thirumathikart_seller/models/product.dart';
 import 'package:thirumathikart_seller/widgets/app_bar.dart';
-import 'package:thirumathikart_seller/widgets/navbar/nav_list.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
