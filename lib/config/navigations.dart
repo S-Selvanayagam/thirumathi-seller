@@ -14,7 +14,6 @@ import 'package:thirumathikart_seller/views/profile.dart';
 import 'package:thirumathikart_seller/views/terms_conditions.dart';
 import 'package:thirumathikart_seller/views/earning.dart';
 
-
 class NavigationPages {
   static List<GetPage<dynamic>> getPages() => [
         GetPage(
@@ -43,18 +42,17 @@ class NavigationPages {
           binding: ProfileBindings(),
         ),
         GetPage(
-
           name: NavigationRoutes.main,
           page: () => const Mainpage(),
           binding: MainBindings(),
         ),
-        GetPage(name: NavigationRoutes.termsconditions,page: Termspage.new)
+        GetPage(name: NavigationRoutes.termsconditions, page: Termspage.new),
         // GetPage(name: NavigationRoutes.termsconditions, page: const Termspage(),)
 
+        GetPage(
           name: NavigationRoutes.earningRoute,
           page: () => const EarningPage(),
           binding: EarningBindings(),
         ),
-
       ];
 }
