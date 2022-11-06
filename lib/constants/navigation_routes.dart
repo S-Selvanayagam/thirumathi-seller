@@ -6,4 +6,5 @@ class NavigationRoutes {
   static String loginRoute = '/login';
   static String profileRoute = '/profile';
   static String termsconditions = '/terms';
+  static String earningRoute = '/earning';
 }
