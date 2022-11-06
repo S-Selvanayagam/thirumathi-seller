@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:thirumathikart_seller/config/themes.dart';
-import 'package:thirumathikart_seller/constants/nav_list.dart';
 import 'package:thirumathikart_seller/constants/navigation_routes.dart';
 import 'package:thirumathikart_seller/controllers/home_controller.dart';
 import 'package:thirumathikart_seller/models/product.dart';
@@ -38,38 +36,5 @@ class HomePage extends GetView<HomeController> {
             ),
           ],
         )), //TODO : Need to remove After PR review
-        bottomNavigationBar: Obx(() => BottomNavigationBar(
-            elevation: 0,
-            currentIndex: controller.selectedIndex.value,
-            onTap: (value) {
-              if (value < 3) {
-                controller.selectedIndex.value = value;
-                controller.onPageChanged();
-              } else {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) => Wrap(
-                        children: moreList
-                            .map(
-                              (e) => ListTile(
-                                leading: e['icon'] as Widget,
-                                title: Text(e['title'] as String),
-                              ),
-                            )
-                            .toList()));
-              }
-            },
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: AppTheme.navColor,
-            unselectedItemColor: AppTheme.deSelected,
-            selectedLabelStyle: TextStyle(color: AppTheme.textPrimary),
-            showUnselectedLabels: false,
-            selectedFontSize: 10,
-            items: navList
-                .map((e) => BottomNavigationBarItem(
-                      icon: e['icon'] as Widget,
-                      label: e['title'] as String,
-                    ))
-                .toList())),
       );
 }

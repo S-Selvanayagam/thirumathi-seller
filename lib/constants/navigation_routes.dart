@@ -1,4 +1,5 @@
 class NavigationRoutes {
+  static String main = '/main';
   static String home = '/home';
   static String addProduct = '/addProduct';
   static String editProduct = '/editProduct';

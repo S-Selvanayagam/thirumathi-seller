@@ -17,10 +17,16 @@ var navList = [
     'icon': const Icon(Icons.person_outline),
     'toRoute': NavigationRoutes.profileRoute,
   },
+  {
+    'title': 'More',
+    'icon': const Icon(Icons.more_horiz),
+    'toRoute': NavigationRoutes.home,
+  },
 ];
 var moreList = [
   {
     'title': 'Terms and Conditions',
+    'icon': const Icon(Icons.toc_rounded),
     'toRoute': NavigationRoutes.termsconditions,
   },
 ];
