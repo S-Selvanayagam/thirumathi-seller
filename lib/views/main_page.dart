@@ -37,12 +37,11 @@ class Mainpage extends GetView<MainController> {
                   showModalBottomSheet(
                       context: context,
                       builder: (context) => Wrap(
-                          children:moreList
+                          children: moreList
                               .map(
                                 (e) => ListTile(
                                   leading: e['icon'] as Widget,
-                                  title: Text(e['title'] as String
-                                   ),
+                                  title: Text(e['title'] as String),
                                 ),
                               )
                               .toList()));
