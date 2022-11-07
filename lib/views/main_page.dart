@@ -3,9 +3,8 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:thirumathikart_seller/config/themes.dart';
 import 'package:thirumathikart_seller/constants/nav_list.dart';
 import 'package:thirumathikart_seller/controllers/main_controller.dart';
-import 'package:thirumathikart_seller/views/add_edit_product_page.dart';
 import 'package:thirumathikart_seller/views/home_page.dart';
-import 'package:thirumathikart_seller/views/profile.dart';
+import 'package:thirumathikart_seller/views/login.dart';
 import 'package:thirumathikart_seller/widgets/app_bar.dart';
 
 class Mainpage extends GetView<MainController> {
@@ -20,10 +19,10 @@ class Mainpage extends GetView<MainController> {
             PageView(
               controller: controller.pageController,
               physics: const NeverScrollableScrollPhysics(),
-              children: [
-                const HomePage(),
-                AddEditProductPage(),
-                const ProfilePage(),
+              children: const [
+                HomePage(),
+                HomePage(),
+                LoginPage(),
               ],
             ),
           ]),
@@ -38,11 +37,12 @@ class Mainpage extends GetView<MainController> {
                   showModalBottomSheet(
                       context: context,
                       builder: (context) => Wrap(
-                          children: moreList
+                          children:moreList
                               .map(
                                 (e) => ListTile(
                                   leading: e['icon'] as Widget,
-                                  title: Text(e['title'] as String),
+                                  title: Text(e['title'] as String
+                                   ),
                                 ),
                               )
                               .toList()));

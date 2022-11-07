@@ -43,7 +43,7 @@ class NavigationPages {
         ),
         GetPage(
           name: NavigationRoutes.main,
-          page: () => const Mainpage(),
+          page: Mainpage.new,
           binding: MainBindings(),
         ),
         GetPage(name: NavigationRoutes.termsconditions, page: Termspage.new),

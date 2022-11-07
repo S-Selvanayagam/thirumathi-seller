@@ -29,4 +29,9 @@ var moreList = [
     'icon': const Icon(Icons.toc_rounded),
     'toRoute': NavigationRoutes.termsconditions,
   },
+  {
+    'title': 'Earnings',
+    'icon': const Icon(Icons.toc_rounded),
+    'toRoute': NavigationRoutes.earningRoute,
+  }
 ];
