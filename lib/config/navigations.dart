@@ -55,7 +55,7 @@ class NavigationPages {
           page: () => const EarningPage(),
           binding: EarningBindings(),
         ),
-          GetPage(
+        GetPage(
           name: NavigationRoutes.registerRoute,
           page: () => const RegisterPage(),
         ),
