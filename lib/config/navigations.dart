@@ -11,6 +11,7 @@ import 'package:thirumathikart_seller/views/home_page.dart';
 import 'package:thirumathikart_seller/views/login.dart';
 import 'package:thirumathikart_seller/views/main_page.dart';
 import 'package:thirumathikart_seller/views/profile.dart';
+import 'package:thirumathikart_seller/views/registration_page.dart';
 import 'package:thirumathikart_seller/views/terms_conditions.dart';
 import 'package:thirumathikart_seller/views/earning.dart';
 
@@ -53,6 +54,10 @@ class NavigationPages {
           name: NavigationRoutes.earningRoute,
           page: () => const EarningPage(),
           binding: EarningBindings(),
+        ),
+          GetPage(
+          name: NavigationRoutes.registerRoute,
+          page: () => const RegisterPage(),
         ),
       ];
 }
