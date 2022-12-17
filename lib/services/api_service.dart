@@ -3,6 +3,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_disposable.dart';
 import 'package:thirumathikart_seller/constants/api_constants.dart';
 import 'package:thirumathikart_seller/models/login_request.dart';
 import 'package:thirumathikart_seller/models/login_response.dart';
+import 'package:thirumathikart_seller/models/product_response.dart';
 import 'package:thirumathikart_seller/models/register_request.dart';
 import 'package:thirumathikart_seller/models/register_response.dart';
 import 'package:thirumathikart_seller/services/storage_service.dart';
@@ -64,6 +65,32 @@ class ApiManager extends GetConnect {
       }
     } catch (e) {
       return Future.error(e);
+    }
+  }
+
+  Future<List<ProductResponse>> getProductsByCategory(
+      StorageServices storageServices, String category) async {
+    try {
+      final cache = storageServices.retriveProducts();
+      final response = await get(
+          '${ApiConstants.baseUrl}${ApiConstants.products}/$category',
+          headers: headers);
+      if (response.statusCode == 200 && response.bodyString != null) {
+        storageServices
+            .storeProdcuts({category: response.bodyString!}, category);
+        final products = productResponseFromJson(response.bodyString!);
+        return products;
+      } else {
+        if (cache![category] != null) {
+          final productsFromCache = productResponseFromJson(cache[category]!);
+          return productsFromCache;
+        } else {
+          Future.error('Failed to load products');
+        }
+      }
+      return Future.error('Failed to load products');
+    } catch (e) {
+      return Future.error('Error occurred while fetching products');
     }
   }
 }

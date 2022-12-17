@@ -18,4 +18,21 @@ class StorageServices extends GetxService {
 
   User? getUser() =>
       loginResponseFromJson(storage.read(StorageConstants.user)).user;
+
+  Future<void> storeProdcuts(Map<String, String> res, String category) async {
+    Map<String, dynamic> products = retriveProducts() ?? {};
+    if (products != {}) {
+      if (products[category] != null) {
+        products[category] = res[category]!;
+      } else {
+        products.addAll(res);
+      }
+    } else {
+      products = res;
+    }
+    storage.write(StorageConstants.products, products);
+  }
+
+  Map<String, dynamic>? retriveProducts() =>
+      storage.read(StorageConstants.products);
 }
